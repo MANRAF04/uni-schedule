@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<script>window.__distinct_count__ = {{ distinct_count|int }};</script>
+<div class="schedule-grid">
+  {% set day_map = {'Monday':'Δευτέρα','Tuesday':'Τρίτη','Wednesday':'Τετάρτη','Thursday':'Πέμπτη','Friday':'Παρασκευή','Saturday':'Σάββατο','Sunday':'Κυριακή'} %}
+  {% for day, courses in grouped.items() %}
+  <section class="day-column">
+    <h2>{{ day_map.get(day, day) }}</h2>
+    {% if courses %}
+      <ul class="course-list">
+      {% for c in courses %}
+        <li class="course-item" data-course-id="{{ c.id }}">
+          <a class="course-link" href="{{ c.url or '#' }}" target="_blank" rel="noopener noreferrer">
+            <div class="course-time">{{ c.start.strftime('%H:%M') }} - {{ c.end.strftime('%H:%M') }}</div>
+            <div class="course-title">{{ c.title }}</div>
+            <div class="course-meta">{{ c.kind }} | {{ c.room }}<br><small>{{ ', '.join(c.instructors) }}</small></div>
+          </a>
+          <button type="button" class="remove-btn" data-remove="{{ url_for('main.remove_course', course_id=c.id) }}">✕</button>
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+  <p class="empty">Δεν υπάρχουν μαθήματα</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}{% endblock %}

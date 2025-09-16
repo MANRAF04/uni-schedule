@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Εβδομαδιαίο Πρόγραμμα</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+  <h1 style="margin:0;">Εβδομαδιαίο Πρόγραμμα</h1>
+      <div id="distinct-counter" style="font-size:2rem;font-weight:700;color:#2c7be5;">
+        <!-- Will be populated -->
+      </div>
+    </div>
+    <nav>
+      <a href="/">Αρχική</a> |
+      <a href="/api/export" target="_blank">Εξαγωγή JSON</a> |
+      <a href="/export/ics?start=2025-09-22&weeks=15" title="Λήψη αρχείου iCalendar (.ics) για 15 διδακτικές εβδομάδες">Εξαγωγή ICS (15ε)</a> |
+      <form id="reset-form" action="/reset" method="post" style="display:inline;" onsubmit="return confirm('Reset schedule to original?');">
+        <button type="submit" style="background:#555;color:#fff;border:none;padding:0.25rem 0.55rem;border-radius:4px;cursor:pointer;">Επαναφορά</button>
+      </form>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize counter if value from server embedded
+    const counterEl = document.getElementById('distinct-counter');
+    function setCounter(n){
+      if(!counterEl) return;
+      const label = n === 1 ? 'μάθημα' : 'μαθήματα';
+      counterEl.textContent = n + ' ' + label;
+    }
+    if (counterEl && window.__distinct_count__ !== undefined) setCounter(window.__distinct_count__);
+    document.body.addEventListener('click', async (e) => {
+      const btn = e.target.closest('button.remove-btn');
+      if (!btn) return;
+      e.preventDefault();
+      const url = btn.getAttribute('data-remove');
+      try {
+        const resp = await fetch(url, {method: 'POST', headers: {'Accept':'application/json','X-Requested-With':'fetch'}});
+        if (resp.ok) {
+          const data = await resp.json();
+            if (Array.isArray(data.removed_ids)) {
+              data.removed_ids.forEach(id => {
+                const item = document.querySelector(`li.course-item[data-course-id="${id}"]`);
+                if (item) {
+                  item.style.opacity = '0';
+                  setTimeout(()=> item.remove(), 200);
+                }
+              });
+              if (counterEl && typeof data.distinct_remaining === 'number') setCounter(data.distinct_remaining);
+            }
+        }
+      } catch(err) { console.error(err); }
+    });
+    // Optional: AJAX reset (progressive enhancement)
+    const resetForm = document.getElementById('reset-form');
+    if (resetForm) {
+      resetForm.addEventListener('submit', async (e) => {
+        if (!window.fetch) return; // fallback to normal submit
+        e.preventDefault();
+        const ok = true; // confirmation already handled inline
+        if (!ok) return;
+        const resp = await fetch('/reset', {method: 'POST', headers: {'Accept':'application/json','X-Requested-With':'fetch'}});
+        if (resp.ok) {
+            const data = await resp.json();
+            if (counterEl && typeof data.distinct_remaining === 'number') setCounter(data.distinct_remaining);
+            // Full reload to rebuild DOM list
+            location.reload();
+        }
+      });
+    }
+  });
+  </script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

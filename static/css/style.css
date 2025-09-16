@@ -1,0 +1,20 @@
+body { font-family: system-ui, Arial, sans-serif; margin: 0; padding: 0; background:#f7f7f9; }
+header { background:#283593; color:#fff; padding:1rem 1.5rem; }
+header h1 { margin:0; font-size:1.4rem; }
+nav a { color:#ffeb3b; text-decoration:none; margin-right:0.5rem; }
+.schedule-grid { display:flex; gap:1rem; align-items:flex-start; padding:1rem; overflow-x:auto; }
+.day-column { background:#fff; border:1px solid #ddd; border-radius:6px; padding:0.5rem 0.75rem; min-width:220px; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+.day-column h2 { margin-top:0; font-size:1.1rem; border-bottom:1px solid #eee; padding-bottom:0.25rem; }
+.course-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem; }
+.course-item { background:#fafafa; border:1px solid #e0e0e0; border-radius:6px; padding:0.5rem 0.6rem; position:relative; transition:box-shadow .15s, transform .15s; }
+.course-item:hover { border-color:#bdbdbd; }
+.course-item:hover { box-shadow:0 2px 6px rgba(0,0,0,0.12); transform:translateY(-2px); }
+.course-link { display:block; color:inherit; text-decoration:none; }
+.course-link:focus .course-title, .course-link:hover .course-title { text-decoration:underline; }
+.course-time { font-weight:600; font-size:0.85rem; color:#1a237e; }
+.course-title { font-weight:600; margin:0.25rem 0; }
+.course-meta { font-size:0.7rem; color:#444; line-height:1.2; }
+.remove-btn { background:#e53935; color:#fff; border:none; padding:0.3rem 0.6rem; font-size:0.7rem; border-radius:4px; cursor:pointer; position:absolute; top:4px; right:4px; line-height:1; }
+.remove-btn:hover { background:#b71c1c; }
+.empty { font-size:0.75rem; color:#777; }
+@media (max-width: 900px) { .schedule-grid { flex-direction:row; } }
