@@ -58,7 +58,7 @@
       } catch(err) { console.error(err); }
     });
     document.body.addEventListener('click', async (e) => {
-      const btn = e.target.closest('button.year-toggle, button.filter-toggle');
+  const btn = e.target.closest('button.year-toggle, button.filter-toggle');
       if (!btn) return;
       const form = btn.closest('form');
       if (!form || !window.fetch) return;

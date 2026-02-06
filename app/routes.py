@@ -262,6 +262,9 @@ def index():
         disabled_years=sorted(disabled_years),
         requirements=requirements,
         disabled_requirements=sorted(disabled_requirements)
+    disabled_years=sorted(disabled_years),
+    requirements=requirements,
+    disabled_requirements=sorted(disabled_requirements)
     )
 
 
