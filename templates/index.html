@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <script>window.__distinct_count__ = {{ distinct_count|int }};</script>
+{% if years %}
+<div class="year-filters">
+  <span class="year-filters-label">Έτη:</span>
+  <ul class="year-filters-list">
+    {% for y in years %}
+    <li>
+      <form method="post" action="{% if y in disabled_years %}{{ url_for('main.enable_year', year_label=y) }}{% else %}{{ url_for('main.disable_year', year_label=y) }}{% endif %}">
+        <button type="submit" class="year-toggle{% if y in disabled_years %} year-disabled{% endif %}">
+          {{ y }}{% if y in disabled_years %} (Ανενεργό){% endif %}
+        </button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
 <div class="schedule-grid">
   {% set day_map = {'Monday':'Δευτέρα','Tuesday':'Τρίτη','Wednesday':'Τετάρτη','Thursday':'Πέμπτη','Friday':'Παρασκευή','Saturday':'Σάββατο','Sunday':'Κυριακή'} %}
   {% for day, courses in grouped.items() %}
@@ -9,13 +25,13 @@
     {% if courses %}
       <ul class="course-list">
       {% for c in courses %}
-        <li class="course-item" data-course-id="{{ c.id }}">
+        <li class="course-item{% if not c.active %} inactive{% endif %}" data-course-id="{{ c.id }}">
           <a class="course-link" href="{{ c.url or '#' }}" target="_blank" rel="noopener noreferrer">
             <div class="course-time">{{ c.start.strftime('%H:%M') }} - {{ c.end.strftime('%H:%M') }}</div>
             <div class="course-title">{{ c.title }}</div>
             <div class="course-meta">{{ c.kind }} | {{ c.room }}<br><small>{{ ', '.join(c.instructors) }}</small></div>
           </a>
-          <button type="button" class="remove-btn" data-remove="{{ url_for('main.remove_course', course_id=c.id) }}">✕</button>
+          <button type="button" class="remove-btn" data-remove="{{ url_for('main.remove_course', course_id=c.id) }}">{% if c.active %}✕{% else %}✓{% endif %}</button>
         </li>
       {% endfor %}
       </ul>

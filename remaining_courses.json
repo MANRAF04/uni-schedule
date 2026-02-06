@@ -1,0 +1,1840 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Ανάλυση Κυκλωμάτων Ι",
+      "day": "Monday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Πλέσσας Φώτιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1442",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 2,
+      "title": "Ανάλυση Κυκλωμάτων Ι",
+      "day": "Monday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Καραμπερόπουλος Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1442",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 3,
+      "title": "Ανάλυση Κυκλωμάτων Ι",
+      "day": "Monday",
+      "start": "14:00",
+      "end": "22:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Καραμπερόπουλος Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1442",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 4,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Tuesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Λάλης Σπύρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 5,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Tuesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Θάνος Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 6,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Tuesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Θάνος Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 7,
+      "title": "Λογισμός ΙΙ",
+      "day": "Tuesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Χατζάρας Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=406",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 8,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Tuesday",
+      "start": "16:00",
+      "end": "22:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 9,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Wednesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Λάλης Σπύρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 10,
+      "title": "Διακριτά Μαθηματικά",
+      "day": "Wednesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Τσαλαπάτα Χαρίκλεια"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=405",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 11,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Wednesday",
+      "start": "18:00",
+      "end": "22:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 12,
+      "title": "Διακριτά Μαθηματικά",
+      "day": "Thursday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Τσαλαπάτα Χαρίκλεια"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=405",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 13,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Thursday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Θάνος Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 14,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Thursday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Θάνος Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 15,
+      "title": "Λογισμός ΙΙ",
+      "day": "Thursday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Χατζάρας Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=406",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 16,
+      "title": "Τεχνικό Σχέδιο",
+      "day": "Thursday",
+      "start": "16:00",
+      "end": "20:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1559",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 17,
+      "title": "Προγραμματισμός ΙΙ",
+      "day": "Thursday",
+      "start": "20:00",
+      "end": "22:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=358",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 18,
+      "title": "Μεθοδολογία Σύνταξης Τεχνικών Κειμένων και Παρουσιάσεων στην Αγγλική Γλώσσα",
+      "day": "Friday",
+      "start": "08:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Ντέλιου Ελευθερία"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=3699",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 19,
+      "title": "Ανάλυση Κυκλωμάτων Ι",
+      "day": "Friday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Πλέσσας Φώτιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1442",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 20,
+      "title": "Τεχνικό Σχέδιο",
+      "day": "Friday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Κρομμύδας Κωνσταντίνος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1559",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 21,
+      "title": "Τεχνικό Σχέδιο",
+      "day": "Friday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1559",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 22,
+      "title": "Τεχνικό Σχέδιο",
+      "day": "Friday",
+      "start": "18:00",
+      "end": "22:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1559",
+      "year": "1ο Έτος",
+      "active": true
+    },
+    {
+      "id": 23,
+      "title": "Εισαγωγή στην Ηλεκτρονική",
+      "day": "Monday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Ευμορφόπουλος Νέστωρ",
+        "Πλέσσας Φώτιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1600",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 24,
+      "title": "Αλγόριθμοι",
+      "day": "Monday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Κατσαρός Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1448",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 25,
+      "title": "Διαφορικές Εξισώσεις",
+      "day": "Monday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Βάβαλης Εμμανουήλ"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1449",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 26,
+      "title": "Αριθμητική Ανάλυση",
+      "day": "Tuesday",
+      "start": "10:00",
+      "end": "11:00",
+      "kind": "Φροντιστήριο",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Φεύγας Αθανάσιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1598",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 27,
+      "title": "Αριθμητική Ανάλυση",
+      "day": "Tuesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Τσομπανοπούλου Παναγιώτα"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1598",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 28,
+      "title": "Διαφορικές Εξισώσεις",
+      "day": "Tuesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Βάβαλης Εμμανουήλ"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1449",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 29,
+      "title": "Σήματα και Συστήματα",
+      "day": "Tuesday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Ποταμιάνος Γεράσιμος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1601",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 30,
+      "title": "Αριθμητική Ανάλυση",
+      "day": "Wednesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Τσομπανοπούλου Παναγιώτα",
+        "Φεύγας Αθανάσιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1598",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 31,
+      "title": "Αριθμητική Ανάλυση",
+      "day": "Wednesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Τσομπανοπούλου Παναγιώτα",
+        "Φεύγας Αθανάσιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1598",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 32,
+      "title": "Αριθμητική Ανάλυση",
+      "day": "Wednesday",
+      "start": "14:00",
+      "end": "18:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Τσομπανοπούλου Παναγιώτα",
+        "Φεύγας Αθανάσιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1598",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 33,
+      "title": "Αριθμητική Ανάλυση",
+      "day": "Wednesday",
+      "start": "14:00",
+      "end": "18:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Τσομπανοπούλου Παναγιώτα",
+        "Φεύγας Αθανάσιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1598",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 34,
+      "title": "Σήματα και Συστήματα",
+      "day": "Wednesday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Ποταμιάνος Γεράσιμος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1601",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 35,
+      "title": "Αριθμητική Ανάλυση",
+      "day": "Thursday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Τσομπανοπούλου Παναγιώτα"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1598",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 36,
+      "title": "Αλγόριθμοι",
+      "day": "Thursday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Κατσαρός Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1448",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 37,
+      "title": "Εισαγωγή στην Ηλεκτρονική",
+      "day": "Thursday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Εργαστήριο",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Καραμπερόπουλος Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1600",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 38,
+      "title": "Εισαγωγή στην Ηλεκτρονική",
+      "day": "Friday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Ευμορφόπουλος Νέστωρ",
+        "Πλέσσας Φώτιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1600",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 39,
+      "title": "Εισαγωγή στην Ηλεκτρονική",
+      "day": "Friday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Καραμπερόπουλος Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1600",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 40,
+      "title": "Εισαγωγή στην Ηλεκτρονική",
+      "day": "Friday",
+      "start": "14:00",
+      "end": "18:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Καραμπερόπουλος Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1600",
+      "year": "2ο Έτος",
+      "active": true
+    },
+    {
+      "id": 41,
+      "title": "Εισαγωγή στη Νανοηλεκτρονική",
+      "day": "Monday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1439",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 42,
+      "title": "Αρχιτεκτονική Παράλληλων Συστημάτων",
+      "day": "Monday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 205",
+      "instructors": [
+        "Μπέλλας Νικόλαος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1725",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 43,
+      "title": "Συστήματα Μετρήσεων",
+      "day": "Monday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Λουτρίδης Σπυρίδων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75309",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 44,
+      "title": "Λειτουργικά Συστήματα",
+      "day": "Monday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Αντωνόπουλος Χρήστος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=386",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 45,
+      "title": "Τηλεπικοινωνιακά Συστήματα Ι",
+      "day": "Monday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Αργυρίου Αντώνιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1607",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 46,
+      "title": "Εργαστήριο Σχεδίασης SoC (System – on – Chip) με Εργαλεία CAD",
+      "day": "Monday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Εργαστήριο",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Σωτηρίου Χρήστος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1625",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 47,
+      "title": "Αντικειμενοστραφής Προγραμματισμός",
+      "day": "Monday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Θάνος Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1711",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 48,
+      "title": "Ενσωματωμένα Συστήματα",
+      "day": "Tuesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Μπέλλας Νικόλαος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1746",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 49,
+      "title": "Εισαγωγή στη Θεωρία Υπολογισμού",
+      "day": "Tuesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 205",
+      "instructors": [
+        "Τουσίδου Ελένη"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1618",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 50,
+      "title": "Συστήματα Μετρήσεων",
+      "day": "Tuesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Λουτρίδης Σπυρίδων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75309",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 51,
+      "title": "Λειτουργικά Συστήματα",
+      "day": "Tuesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Αντωνόπουλος Χρήστος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=386",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 52,
+      "title": "Συστήματα Ηλεκτρικής Ενέργειας Ι",
+      "day": "Tuesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Κόντης Ελευθέριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1608",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 53,
+      "title": "Αναγνώριση Προτύπων",
+      "day": "Tuesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Ποταμιάνος Γεράσιμος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1628",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 54,
+      "title": "Ηλεκτρομαγνητικά Πεδία I",
+      "day": "Tuesday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Ευμορφόπουλος Νέστωρ"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1624",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 55,
+      "title": "Εισαγωγή στη Νανοηλεκτρονική",
+      "day": "Wednesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1439",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 56,
+      "title": "Συστήματα Ηλεκτρικής Ενέργειας Ι",
+      "day": "Wednesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Κόντης Ελευθέριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1608",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 57,
+      "title": "Αναγνώριση Προτύπων",
+      "day": "Wednesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Ποταμιάνος Γεράσιμος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1628",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 58,
+      "title": "Ηλεκτροτεχνικά Υλικά",
+      "day": "Wednesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Χροναίος Αλέξανδρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1650",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 59,
+      "title": "Κατανεμημένα Συστήματα",
+      "day": "Wednesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Λάλης Σπύρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1620",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 60,
+      "title": "Ηλεκτρονικά Ισχύος",
+      "day": "Wednesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Κρομμύδας Κωνσταντίνος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=28506",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 61,
+      "title": "Εναλλακτικές Μορφές Ενέργειας",
+      "day": "Wednesday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Χροναίος Αλέξανδρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1823",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 62,
+      "title": "Ενσωματωμένα Συστήματα",
+      "day": "Thursday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Μπέλλας Νικόλαος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1746",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 63,
+      "title": "Εισαγωγή στη Θεωρία Υπολογισμού",
+      "day": "Thursday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 205",
+      "instructors": [
+        "Τουσίδου Ελένη"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1618",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 64,
+      "title": "Αρχιτεκτονική Παράλληλων Συστημάτων",
+      "day": "Thursday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 205",
+      "instructors": [
+        "Μπέλλας Νικόλαος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1725",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 65,
+      "title": "Εναλλακτικές Μορφές Ενέργειας",
+      "day": "Thursday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Χροναίος Αλέξανδρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1823",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 66,
+      "title": "Εργαστήριο Σχεδίασης SoC (System – on – Chip) με Εργαλεία CAD",
+      "day": "Thursday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Σωτηρίου Χρήστος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1625",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 67,
+      "title": "Ηλεκτροτεχνικά Υλικά",
+      "day": "Thursday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Χροναίος Αλέξανδρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1650",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 68,
+      "title": "Κατανεμημένα Συστήματα",
+      "day": "Thursday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Λάλης Σπύρος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1620",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 69,
+      "title": "Ανάκληση Πληροφορίας",
+      "day": "Thursday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Ραφαηλίδης Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1623",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 70,
+      "title": "Ηλεκτρονικά Ισχύος",
+      "day": "Thursday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Κρομμύδας Κωνσταντίνος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=28506",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 71,
+      "title": "Ηλεκτρομαγνητικά Πεδία I",
+      "day": "Thursday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Ευμορφόπουλος Νέστωρ"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1624",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 72,
+      "title": "Αντικειμενοστραφής Προγραμματισμός",
+      "day": "Friday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Θάνος Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1711",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 73,
+      "title": "Ανάκληση Πληροφορίας",
+      "day": "Friday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Ραφαηλίδης Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1623",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 74,
+      "title": "Τηλεπικοινωνιακά Συστήματα Ι",
+      "day": "Friday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Αργυρίου Αντώνιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1607",
+      "year": "3ο Έτος",
+      "active": true
+    },
+    {
+      "id": 75,
+      "title": "Ηλεκτροακουστική",
+      "day": "Monday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Λουτρίδης Σπυρίδων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78230",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 76,
+      "title": "Αλγόριθμοι CAD Φυσικής Σχεδίασης",
+      "day": "Monday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Σωτηρίου Χρήστος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=15098",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 77,
+      "title": "Ειδικά Θέματα Εφαρμοσμένων Μαθηματικών",
+      "day": "Monday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αιθ. Συνεδριάσεων (405)",
+      "instructors": [
+        "Βάβαλης Εμμανουήλ"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1713",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 78,
+      "title": "Ειδικά Θέματα Εφαρμοσμένων Μαθηματικών",
+      "day": "Monday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αιθ. Συνεδριάσεων (405)",
+      "instructors": [
+        "Βάβαλης Εμμανουήλ"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1713",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 79,
+      "title": "Σύνθετα Δίκτυα",
+      "day": "Monday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 205",
+      "instructors": [
+        "Κατσαρός Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1719",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 80,
+      "title": "Εξόρυξη Δεδομένων",
+      "day": "Monday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1644",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 81,
+      "title": "Σχεδίαση Επεξεργαστών",
+      "day": "Monday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Καρακωνσταντής Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=71783",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 82,
+      "title": "Εισαγωγή στην Οικονομία της Ενέργειας",
+      "day": "Monday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Καρασίμου Μαρία"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=20576",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 83,
+      "title": "Προχωρημένη Διαχείριση Δεδομένων",
+      "day": "Monday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=71733",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 84,
+      "title": "Εφαρμοσμένες Στοχαστικές Διεργασίες",
+      "day": "Monday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Αργυρίου Αντώνιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1659",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 85,
+      "title": "Ειδικά Θέματα Ηλεκτρικών Εγκαταστάσεων",
+      "day": "Monday",
+      "start": "18:00",
+      "end": "22:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Μπαργιώτας Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75382",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 86,
+      "title": "Ηλεκτροακουστική",
+      "day": "Tuesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Λουτρίδης Σπυρίδων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78230",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 87,
+      "title": "Εισαγωγή στη Ρομποτική",
+      "day": "Tuesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Χούστης Ηλίας"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75143",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 88,
+      "title": "Εξόρυξη Δεδομένων",
+      "day": "Tuesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1644",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 89,
+      "title": "Ειδικά Θέματα Εφαρμοσμένων Μαθηματικών",
+      "day": "Tuesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αιθ. Συνεδριάσεων (405)",
+      "instructors": [
+        "Βάβαλης Εμμανουήλ"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1713",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 90,
+      "title": "Βελτιστοποίηση Δικτύων",
+      "day": "Tuesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Φλέγκας Πάρης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1764",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 91,
+      "title": "Προχωρημένη Διαχείριση Δεδομένων",
+      "day": "Tuesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=71733",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 92,
+      "title": "Σχεδίαση Κυκλωμάτων για Ιοντίζοντα Περιβάλλοντα",
+      "day": "Tuesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78228",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 93,
+      "title": "Εισαγωγή στην Οικονομία της Ενέργειας",
+      "day": "Tuesday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Καρασίμου Μαρία"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=20576",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 94,
+      "title": "Έλεγχος και Ευστάθεια Συστημάτων Ηλεκτρικής Ενέργειας",
+      "day": "Tuesday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Κόντης Ελευθέριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1769",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 95,
+      "title": "Ασύρματες Επικοινωνίες",
+      "day": "Tuesday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Κοράκης Αθανάσιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=2996",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 96,
+      "title": "Αλγόριθμοι CAD Φυσικής Σχεδίασης",
+      "day": "Wednesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Σωτηρίου Χρήστος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=15098",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 97,
+      "title": "Έλεγχος και Ευστάθεια Συστημάτων Ηλεκτρικής Ενέργειας",
+      "day": "Wednesday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Κόντης Ελευθέριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1769",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 98,
+      "title": "Δίκτυα Υπολογιστών ΙΙ",
+      "day": "Wednesday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1763",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 99,
+      "title": "Βιομηχανικός Αυτόματος Έλεγχος",
+      "day": "Wednesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Κρομμύδας Κωνσταντίνος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75381",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 100,
+      "title": "Σχεδίαση Κβαντικών Υπολογιστών",
+      "day": "Wednesday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Μούντανος Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78233",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 101,
+      "title": "Εισαγωγή στην Οικονομία της Ενέργειας",
+      "day": "Wednesday",
+      "start": "16:00",
+      "end": "19:00",
+      "kind": "Φροντιστήριο",
+      "room": "Αιθ. Συνεδριάσεων (405)",
+      "instructors": [
+        "Καρασίμου Μαρία"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=20576",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 102,
+      "title": "Ασφάλεια Δικτύων και Πληροφοριακών Συστημάτων",
+      "day": "Wednesday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Μούντανος Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1629",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 103,
+      "title": "Τεχνολογίες Blockchain και Αποκεντρωμένες Εφαρμογές",
+      "day": "Wednesday",
+      "start": "20:00",
+      "end": "22:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Μούντανος Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1718",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 104,
+      "title": "Βιομηχανικός Αυτόματος Έλεγχος",
+      "day": "Thursday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Κρομμύδας Κωνσταντίνος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75381",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 105,
+      "title": "Αρχιτεκτονική και Ανάπτυξη Παιγνίων",
+      "day": "Thursday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Τσαλαπάτα Χαρίκλεια"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1779",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 106,
+      "title": "Βελτιστοποίηση Δικτύων",
+      "day": "Thursday",
+      "start": "11:00",
+      "end": "13:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Φλέγκας Πάρης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1764",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 107,
+      "title": "Βαθιά Μάθηση και Εφαρμογές της",
+      "day": "Thursday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Ραφαηλίδης Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75389",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 108,
+      "title": "Σύνθετα Δίκτυα",
+      "day": "Thursday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 205",
+      "instructors": [
+        "Κατσαρός Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1719",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 109,
+      "title": "Διαδίκτυο των Πραγμάτων (Internet of Things) και Εφαρμογές",
+      "day": "Thursday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78234",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 110,
+      "title": "Σχεδίαση Κυκλωμάτων για Ιοντίζοντα Περιβάλλοντα",
+      "day": "Thursday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78228",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 111,
+      "title": "Δίκτυα Υπολογιστών ΙΙ",
+      "day": "Thursday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1763",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 112,
+      "title": "Ασύρματες Επικοινωνίες",
+      "day": "Thursday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Κοράκης Αθανάσιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=2996",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 113,
+      "title": "Σχεδίαση Κβαντικών Υπολογιστών",
+      "day": "Thursday",
+      "start": "20:00",
+      "end": "22:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Μούντανος Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78233",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 114,
+      "title": "Εισαγωγή στη Ρομποτική",
+      "day": "Friday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ1 (105)",
+      "instructors": [
+        "Χούστης Ηλίας"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75143",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 115,
+      "title": "Εισαγωγή στη Ρομποτική",
+      "day": "Friday",
+      "start": "09:00",
+      "end": "11:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Χούστης Ηλίας"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75143",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 116,
+      "title": "Διαδίκτυο των Πραγμάτων (Internet of Things) και Εφαρμογές",
+      "day": "Friday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. ΗΥ2 (106)",
+      "instructors": [
+        "Συμβασιούχος Διδάσκων"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=78234",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 117,
+      "title": "Βαθιά Μάθηση και Εφαρμογές της",
+      "day": "Friday",
+      "start": "14:00",
+      "end": "16:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 3",
+      "instructors": [
+        "Ραφαηλίδης Δημήτριος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=75389",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 118,
+      "title": "Εφαρμοσμένες Στοχαστικές Διεργασίες",
+      "day": "Friday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αίθ. 2",
+      "instructors": [
+        "Αργυρίου Αντώνιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1659",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 119,
+      "title": "Αρχιτεκτονική και Ανάπτυξη Παιγνίων",
+      "day": "Friday",
+      "start": "16:00",
+      "end": "18:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 1",
+      "instructors": [
+        "Τσαλαπάτα Χαρίκλεια"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1779",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 120,
+      "title": "Σχεδίαση Επεξεργαστών",
+      "day": "Friday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Αμφ. 2",
+      "instructors": [
+        "Καρακωνσταντής Γεώργιος"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=71783",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 121,
+      "title": "Ασφάλεια Δικτύων και Πληροφοριακών Συστημάτων",
+      "day": "Friday",
+      "start": "18:00",
+      "end": "20:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Μούντανος Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1629",
+      "year": "4ο Έτος",
+      "active": true
+    },
+    {
+      "id": 122,
+      "title": "Τεχνολογίες Blockchain και Αποκεντρωμένες Εφαρμογές",
+      "day": "Friday",
+      "start": "20:00",
+      "end": "22:00",
+      "kind": "Διάλεξη",
+      "room": "Εργ. 208",
+      "instructors": [
+        "Μούντανος Ιωάννης"
+      ],
+      "url": "https://www.e-ce.uth.gr/?p=1718",
+      "year": "4ο Έτος",
+      "active": true
+    }
+  ]
+}
