@@ -755,7 +755,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1711",
       "year": "3ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -947,7 +947,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1620",
       "year": "3ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1091,7 +1091,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1620",
       "year": "3ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1155,7 +1155,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1711",
       "year": "3ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1603,7 +1603,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=78233",
       "year": "4ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1635,7 +1635,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1629",
       "year": "4ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1651,7 +1651,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1718",
       "year": "4ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1811,7 +1811,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=78233",
       "year": "4ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1939,7 +1939,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1629",
       "year": "4ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     },
     {
@@ -1955,7 +1955,7 @@
       ],
       "url": "https://www.e-ce.uth.gr/?p=1718",
       "year": "4ο Έτος",
-      "active": false,
+      "active": true,
       "requirement": "elective"
     }
   ]

@@ -2,6 +2,8 @@ body { font-family: system-ui, Arial, sans-serif; margin: 0; padding: 0; backgro
 header { background:#283593; color:#fff; padding:1rem 1.5rem; }
 header h1 { margin:0; font-size:1.4rem; }
 nav a { color:#ffeb3b; text-decoration:none; margin-right:0.5rem; }
+.nav-reset { background:#ffeb3b; color:#283593; border:none; padding:0.2rem 0.5rem; font-size:0.8rem; border-radius:4px; cursor:pointer; }
+.nav-reset:hover { background:#fff59d; }
 .year-filters { display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem 0.25rem; flex-wrap:wrap; }
 .year-filters-label { font-weight:600; color:#333; }
 .year-filters-list { list-style:none; padding:0; margin:0; display:flex; gap:0.5rem; flex-wrap:wrap; }

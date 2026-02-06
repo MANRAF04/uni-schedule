@@ -17,7 +17,10 @@
     <nav>
       <a href="/">Αρχική</a> |
       <a href="/api/export" target="_blank">Εξαγωγή JSON</a> |
-      <a href="/export/ics?start=2025-09-22&weeks=15" title="Λήψη αρχείου iCalendar (.ics) για 15 διδακτικές εβδομάδες">Εξαγωγή ICS (15ε)</a> |
+      <a href="/export/ics" title="Λήψη αρχείου iCalendar (.ics) με τα προεπιλεγμένα του ακαδημαϊκού ημερολογίου">Εξαγωγή ICS</a> |
+      <form method="post" action="/reset" style="display:inline;">
+        <button type="submit" class="nav-reset">Επαναφορά</button>
+      </form>
     </nav>
   </header>
   <main>

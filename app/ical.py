@@ -22,18 +22,24 @@ def _next_date(start: date, target_weekday: int) -> date:
 def _default_holidays_for_start(start_date: date) -> List[Tuple[date, date]]:
     """Return default holiday ranges based on the semester inferred from start_date."""
     year = start_date.year
-    # Winter semester typically starts in September and includes the Christmas/New Year break
+    # Winter semester (2025-2026 calendar)
     if start_date.month >= 9 or start_date.month == 1:
-        return [(date(year, 12, 23), date(year + 1, 1, 6))]
+        return [
+            (date(2025, 10, 28), date(2025, 10, 28)),
+            (date(2025, 11, 17), date(2025, 11, 17)),
+            (date(2025, 12, 6), date(2025, 12, 6)),
+            (date(2025, 12, 23), date(2026, 1, 6)),
+            (date(2026, 1, 30), date(2026, 1, 30)),
+        ]
 
-    # Spring (Easter) semester defaults for 2026 (from academic calendar)
+    # Spring (2025-2026 calendar)
     if year == 2026 and 2 <= start_date.month <= 6:
         return [
-            (date(2026, 2, 23), date(2026, 2, 23)),  # Clean Monday
-            (date(2026, 3, 25), date(2026, 3, 25)),  # National holiday
-            (date(2026, 4, 6), date(2026, 4, 17)),   # Easter break
-            (date(2026, 5, 1), date(2026, 5, 1)),    # May Day
-            (date(2026, 6, 1), date(2026, 6, 1)),    # Holy Spirit Day
+            (date(2026, 2, 23), date(2026, 2, 23)),
+            (date(2026, 3, 25), date(2026, 3, 25)),
+            (date(2026, 4, 6), date(2026, 4, 17)),
+            (date(2026, 5, 1), date(2026, 5, 1)),
+            (date(2026, 6, 1), date(2026, 6, 1)),
         ]
 
     return []

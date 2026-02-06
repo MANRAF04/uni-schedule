@@ -19,6 +19,8 @@ bp = Blueprint('main', __name__)
 # Lazy load lock
 _loaded = False
 _lock = threading.Lock()
+_current_semester = None
+_calendar_cache = None
 
 PROGRAMME_SOURCE = Path(__file__).resolve().parent.parent / 'programme.htm'
 SPRING_PROGRAMME_URL = 'https://www.e-ce.uth.gr/studies/undergraduate/spring-timetable/year/'
@@ -26,11 +28,147 @@ FALL_PROGRAMME_URL = 'https://www.e-ce.uth.gr/studies/undergraduate/fall-timetab
 PERSIST_FILE = Path(__file__).resolve().parent.parent / 'remaining_courses.json'
 
 
+def _semester_label(today: date) -> str:
+    # Force spring for Dec-Jun, fall otherwise (Jul-Nov)
+    if today.month == 12 or 1 <= today.month <= 6:
+        return 'spring'
+    return 'fall'
+
+
 def _semester_url(today: date) -> str:
-    # Spring semester typically Feb–Jun; fall/winter otherwise
-    if 2 <= today.month <= 6:
+    if _semester_label(today) == 'spring':
         return SPRING_PROGRAMME_URL
     return FALL_PROGRAMME_URL
+
+
+def _semester_from_url(url: str) -> str | None:
+    if 'spring-timetable' in url:
+        return 'spring'
+    if 'fall-timetable' in url:
+        return 'fall'
+    return None
+
+
+def _default_semester_start(today: date, semester: str | None = None) -> date:
+    defaults = _calendar_defaults(semester or _semester_label(today))
+    return defaults['start']
+
+
+def _default_semester_weeks(today: date, semester: str | None = None) -> int:
+    defaults = _calendar_defaults(semester or _semester_label(today))
+    return defaults['weeks']
+
+
+def _parse_first_date(text: str) -> date | None:
+    match = re.search(r'\b(\d{2}/\d{2}/\d{4})\b', text)
+    if not match:
+        return None
+    try:
+        return date.fromisoformat(match.group(1).replace('/', '-'))
+    except ValueError:
+        return None
+
+
+def _extract_dates(text: str) -> list[date]:
+    dates = []
+    for raw in re.findall(r'\b(\d{2}/\d{2}/\d{4})\b', text):
+        try:
+            dates.append(date.fromisoformat(raw.replace('/', '-')))
+        except ValueError:
+            continue
+    return dates
+
+
+def _parse_calendar_table(table: BeautifulSoup) -> dict[str, object]:
+    info = {'start': None, 'weeks': None, 'holidays': []}
+    for tr in table.find_all('tr'):
+        cells = tr.find_all(['th', 'td'])
+        if len(cells) < 2:
+            continue
+        label = cells[0].get_text(' ', strip=True)
+        value = cells[1].get_text(' ', strip=True)
+        if 'Έναρξη Μαθημάτων' in label:
+            info['start'] = _parse_first_date(value)
+        elif 'Διάρκεια Διδασκαλίας' in label:
+            match = re.search(r'\b(\d+)\b', value)
+            if match:
+                info['weeks'] = int(match.group(1))
+        elif 'Αργίες' in label:
+            for d in _extract_dates(value):
+                info['holidays'].append((d, d))
+        elif 'Διακοπές Χριστουγέννων' in label or 'Διακοπές Πάσχα' in label:
+            range_dates = _extract_dates(value)
+            if len(range_dates) >= 2:
+                info['holidays'].append((range_dates[0], range_dates[-1]))
+    return info
+
+
+def _fetch_academic_calendar() -> dict[str, dict[str, object]]:
+    page = 'https://www.e-ce.uth.gr/studies/academic-calendar/'
+    try:
+        req = urllib.request.Request(page, headers={'User-Agent': 'Mozilla/5.0'})
+        html = urllib.request.urlopen(req, timeout=15).read().decode('utf-8', 'ignore')
+    except Exception:
+        return {}
+
+    soup = BeautifulSoup(html, 'html.parser')
+    data: dict[str, dict[str, object]] = {}
+    fall_heading = soup.find(string=re.compile(r'ΧΕΙΜΕΡΙΝΟ ΕΞΑΜΗΝΟ', re.IGNORECASE))
+    spring_heading = soup.find(string=re.compile(r'ΕΑΡΙΝΟ ΕΞΑΜΗΝΟ', re.IGNORECASE))
+
+    if fall_heading:
+        table = fall_heading.find_parent('table')
+        if table:
+            data['fall'] = _parse_calendar_table(table)
+
+    if spring_heading:
+        table = spring_heading.find_parent('table')
+        if table:
+            data['spring'] = _parse_calendar_table(table)
+
+    return data
+
+
+def _calendar_defaults(semester: str) -> dict[str, object]:
+    global _calendar_cache
+    if _calendar_cache is None:
+        _calendar_cache = _fetch_academic_calendar()
+
+    defaults = {
+        'fall': {
+            'start': date(2025, 9, 22),
+            'weeks': 14,
+            'holidays': [
+                (date(2025, 10, 28), date(2025, 10, 28)),
+                (date(2025, 11, 17), date(2025, 11, 17)),
+                (date(2025, 12, 6), date(2025, 12, 6)),
+                (date(2025, 12, 23), date(2026, 1, 6)),
+                (date(2026, 1, 30), date(2026, 1, 30)),
+            ],
+        },
+        'spring': {
+            'start': date(2026, 2, 9),
+            'weeks': 14,
+            'holidays': [
+                (date(2026, 2, 23), date(2026, 2, 23)),
+                (date(2026, 3, 25), date(2026, 3, 25)),
+                (date(2026, 4, 6), date(2026, 4, 17)),
+                (date(2026, 5, 1), date(2026, 5, 1)),
+                (date(2026, 6, 1), date(2026, 6, 1)),
+            ],
+        },
+    }
+
+    resolved = defaults.get(semester, defaults['fall']).copy()
+    fetched = _calendar_cache.get(semester) if _calendar_cache else None
+    if fetched:
+        if fetched.get('start'):
+            resolved['start'] = fetched['start']
+        if fetched.get('weeks'):
+            resolved['weeks'] = fetched['weeks']
+        if fetched.get('holidays'):
+            resolved['holidays'] = fetched['holidays']
+    return resolved
 
 
 def _course_key(title: str, day: str, start: str, end: str, kind: str, room: str) -> str:
@@ -212,6 +350,7 @@ def visible_courses() -> list[Course]:
 
 def ensure_loaded():
     global _loaded
+    global _current_semester
     if not _loaded:
         with _lock:
             if not _loaded:
@@ -252,7 +391,10 @@ def ensure_loaded():
                 try:
                     from datetime import date
                     from .parser import load_from_url
-                    courses = load_from_url(_semester_url(date.today()))
+                    today = date.today()
+                    url = _semester_url(today)
+                    _current_semester = _semester_from_url(url) or _semester_label(today)
+                    courses = load_from_url(url)
                 except Exception:
                     if PROGRAMME_SOURCE.exists():
                         from .parser import load_from_file
@@ -545,25 +687,31 @@ def export_remaining():
 @bp.route('/export/ics')
 def export_ics():
     """Download an iCalendar file for remaining courses.
-    Query params:
-      start=YYYY-MM-DD (defaults to today)
-      weeks=number of weekly repetitions (default 12)
+        Query params:
+            start=YYYY-MM-DD (defaults to academic calendar start)
+            weeks=number of weekly repetitions (default 14)
+            semester=spring|fall (optional override)
     """
     ensure_loaded()
     from datetime import datetime, date
     start_param = request.args.get('start')
     weeks_param = request.args.get('weeks')
+    semester_param = request.args.get('semester')
+    today = date.today()
+    semester = semester_param if semester_param in ('spring', 'fall') else (_current_semester or _semester_label(today))
+    calendar_defaults = _calendar_defaults(semester)
     try:
-        start_date = datetime.strptime(start_param, '%Y-%m-%d').date() if start_param else date.today()
+        start_date = datetime.strptime(start_param, '%Y-%m-%d').date() if start_param else calendar_defaults['start']
     except ValueError:
-        start_date = date.today()
+        start_date = calendar_defaults['start']
     try:
-        weeks = int(weeks_param) if weeks_param else 12
+        weeks = int(weeks_param) if weeks_param else calendar_defaults['weeks']
     except ValueError:
-        weeks = 12
-    ics_text = generate_ics(active_courses(), start_date=start_date, weeks=weeks)
+        weeks = calendar_defaults['weeks']
+    holidays = calendar_defaults['holidays']
+    ics_text = generate_ics(active_courses(), start_date=start_date, weeks=weeks, holidays=holidays)
     from flask import Response
-    filename = f'schedule_{start_date.isoformat()}_{weeks}w.ics'
+    filename = f'schedule_{semester}_{start_date.isoformat()}_{weeks}w.ics'
     return Response(
         ics_text,
         mimetype='text/calendar',
