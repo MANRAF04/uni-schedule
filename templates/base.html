@@ -27,12 +27,32 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Initialize counter if value from server embedded
     const counterEl = document.getElementById('distinct-counter');
+    const inactiveToggle = document.getElementById('inactive-toggle');
+    const hideInactiveKey = 'hide_inactive_courses';
     function setCounter(n){
       if(!counterEl) return;
       const label = n === 1 ? 'μάθημα' : 'μαθήματα';
       counterEl.textContent = n + ' ' + label;
     }
     if (counterEl && window.__distinct_count__ !== undefined) setCounter(window.__distinct_count__);
+    function setInactiveHidden(hidden) {
+      document.body.classList.toggle('hide-inactive', hidden);
+      if (inactiveToggle) {
+        const showText = inactiveToggle.getAttribute('data-show-text') || 'Απόκρυψη Ανενεργών';
+        const hideText = inactiveToggle.getAttribute('data-hide-text') || 'Εμφάνιση Ανενεργών';
+        inactiveToggle.textContent = hidden ? hideText : showText;
+        inactiveToggle.setAttribute('aria-pressed', hidden ? 'true' : 'false');
+      }
+    }
+    if (inactiveToggle) {
+      const stored = localStorage.getItem(hideInactiveKey);
+      setInactiveHidden(stored === '1');
+      inactiveToggle.addEventListener('click', () => {
+        const nextHidden = !document.body.classList.contains('hide-inactive');
+        setInactiveHidden(nextHidden);
+        localStorage.setItem(hideInactiveKey, nextHidden ? '1' : '0');
+      });
+    }
     document.body.addEventListener('click', async (e) => {
       const btn = e.target.closest('button.remove-btn');
       if (!btn) return;
@@ -58,7 +78,7 @@
       } catch(err) { console.error(err); }
     });
     document.body.addEventListener('click', async (e) => {
-  const btn = e.target.closest('button.year-toggle, button.filter-toggle');
+      const btn = e.target.closest('button.year-toggle, button.filter-toggle');
       if (!btn) return;
       const form = btn.closest('form');
       if (!form || !window.fetch) return;

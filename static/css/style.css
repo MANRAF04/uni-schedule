@@ -10,10 +10,14 @@ nav a { color:#ffeb3b; text-decoration:none; margin-right:0.5rem; }
 .year-toggle:hover { background:#1b5bbf; }
 .year-toggle.year-disabled { background:#9e9e9e; }
 .year-toggle.year-disabled:hover { background:#7a7a7a; }
+.visibility-toggle { background:#00897b; color:#fff; border:none; padding:0.3rem 0.6rem; font-size:0.8rem; border-radius:4px; cursor:pointer; }
+.visibility-toggle:hover { background:#00695c; }
 .filter-toggle { background:#5e35b1; color:#fff; border:none; padding:0.3rem 0.6rem; font-size:0.8rem; border-radius:4px; cursor:pointer; }
 .filter-toggle:hover { background:#4527a0; }
 .filter-toggle.year-disabled { background:#9e9e9e; }
 .filter-toggle.year-disabled:hover { background:#7a7a7a; }
+.kind-toggle { background:#00796b; }
+.kind-toggle:hover { background:#00695c; }
 .schedule-grid { display:flex; gap:1rem; align-items:flex-start; padding:1rem; overflow-x:auto; }
 .day-column { background:#fff; border:1px solid #ddd; border-radius:6px; padding:0.5rem 0.75rem; min-width:220px; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
 .day-column h2 { margin-top:0; font-size:1.1rem; border-bottom:1px solid #eee; padding-bottom:0.25rem; }
@@ -23,6 +27,7 @@ nav a { color:#ffeb3b; text-decoration:none; margin-right:0.5rem; }
 .course-item:hover { box-shadow:0 2px 6px rgba(0,0,0,0.12); transform:translateY(-2px); }
 .course-item.inactive { opacity:0.45; }
 .course-item.inactive .course-title { text-decoration: line-through; }
+.hide-inactive .course-item.inactive { display:none; }
 .course-link { display:block; color:inherit; text-decoration:none; }
 .course-link:focus .course-title, .course-link:hover .course-title { text-decoration:underline; }
 .course-time { font-weight:600; font-size:0.85rem; color:#1a237e; }

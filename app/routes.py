@@ -55,6 +55,73 @@ def _normalize_title(title: str) -> str:
     return t.lower()
 
 
+def _extract_course_code(title: str) -> str | None:
+    match = re.search(r'\b[A-Za-zΑ-ΩΪΫ]{2,}\d+[A-Za-zΑ-ΩΪΫ]?\b', title)
+    return match.group(0) if match else None
+
+
+def _extract_requirement_from_html(html_text: str) -> str | None:
+    if 'Υποχρεωτικό' in html_text:
+        return 'required'
+    if 'Επιλογής' in html_text or 'Μάθημα Επιλογής' in html_text:
+        return 'elective'
+    return None
+
+
+def _fetch_requirement_from_course_url(url: str) -> str | None:
+    if not url:
+        return None
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        html = urllib.request.urlopen(req, timeout=15).read().decode('utf-8', 'ignore')
+    except Exception:
+        return None
+    return _extract_requirement_from_html(html)
+
+
+def _fetch_requirement_map_from_undergraduate() -> tuple[dict[str, str], dict[str, str]]:
+    page = 'https://www.e-ce.uth.gr/studies/undergraduate/'
+    try:
+        req = urllib.request.Request(page, headers={'User-Agent': 'Mozilla/5.0'})
+        html = urllib.request.urlopen(req, timeout=15).read().decode('utf-8', 'ignore')
+    except Exception:
+        return {}, {}
+
+    soup = BeautifulSoup(html, 'html.parser')
+    by_code: dict[str, str] = {}
+    by_title: dict[str, str] = {}
+
+    heading_texts = soup.find_all(string=re.compile(r'Υποχρεωτικ|Επιλογ', re.IGNORECASE))
+    for heading in heading_texts:
+        heading_str = str(heading)
+        if 'Υποχρεωτικ' in heading_str:
+            req_type = 'required'
+        elif 'Επιλογ' in heading_str:
+            req_type = 'elective'
+        else:
+            continue
+
+        heading_el = heading.parent
+        table = heading_el.find_next('table') if heading_el else None
+        if not table:
+            continue
+
+        for tr in table.find_all('tr'):
+            tds = tr.find_all('td')
+            if len(tds) < 2:
+                continue
+            code = tds[0].get_text(strip=True)
+            title = tds[1].get_text(strip=True)
+            if not code or not title or title == 'Τίτλος Μαθήματος':
+                continue
+            by_code.setdefault(code, req_type)
+            norm_title = _normalize_title(title)
+            if norm_title:
+                by_title.setdefault(norm_title, req_type)
+
+    return by_code, by_title
+
+
 def _fetch_requirement_map(target_titles: list[str]) -> dict[str, str]:
     """Return mapping of normalized course title -> requirement ('required'|'elective') when available."""
     if not target_titles:
@@ -109,10 +176,9 @@ def _fetch_requirement_map(target_titles: list[str]) -> dict[str, str]:
             detail_html = resp.read().decode('utf-8', 'ignore')
         except Exception:
             return {}
-        if 'Υποχρεωτικό' in detail_html:
-            result[norm_title] = 'required'
-        elif 'Επιλογής' in detail_html or 'Μάθημα Επιλογής' in detail_html:
-            result[norm_title] = 'elective'
+            req_type = _extract_requirement_from_html(detail_html)
+            if req_type:
+                result[norm_title] = req_type
     return result
 
 
@@ -203,6 +269,18 @@ def ensure_loaded():
                         c.requirement = requirement_by_key[key]
 
                 # Try to fetch missing requirement info (best effort)
+                by_code, by_title = _fetch_requirement_map_from_undergraduate()
+                for c in courses:
+                    if c.requirement:
+                        continue
+                    code = _extract_course_code(c.title)
+                    if code and code in by_code:
+                        c.requirement = by_code[code]
+                        continue
+                    norm_title = _normalize_title(c.title)
+                    if norm_title in by_title:
+                        c.requirement = by_title[norm_title]
+
                 missing_titles = [c.title for c in courses if not c.requirement]
                 if missing_titles:
                     req_map = _fetch_requirement_map(missing_titles)
@@ -212,7 +290,22 @@ def ensure_loaded():
                                 req = req_map.get(_normalize_title(c.title))
                                 if req:
                                     c.requirement = req
-                        _save_state()
+
+                # Fallback: fetch from each course page when still missing
+                missing_by_url = [c for c in courses if not c.requirement and c.url]
+                if missing_by_url:
+                    url_cache: dict[str, str | None] = {}
+                    for c in missing_by_url:
+                        if c.url not in url_cache:
+                            url_cache[c.url] = _fetch_requirement_from_course_url(c.url)
+                        if url_cache[c.url]:
+                            c.requirement = url_cache[c.url]
+
+                # Final fallback: ensure each course has a type
+                for c in courses:
+                    if not c.requirement:
+                        c.requirement = 'elective'
+                _save_state()
                 COURSES.clear()
                 COURSES_BY_ID.clear()
                 for c in courses:
@@ -243,7 +336,20 @@ def index():
     grouped = group_by_day()
     distinct = distinct_course_titles()
     years = sorted({c.year for c in COURSES if c.year})
-    requirements = sorted({c.requirement for c in COURSES if c.requirement})
+    kinds = sorted({c.kind for c in COURSES if c.kind})
+    requirements = ['required', 'elective']
+    year_counts = {
+        y: len({c.title for c in COURSES if c.year == y})
+        for y in years
+    }
+    kind_counts = {
+        k: len({c.title for c in COURSES if c.kind == k})
+        for k in kinds
+    }
+    requirement_counts = {
+        r: sum(1 for c in COURSES if c.requirement == r)
+        for r in requirements
+    }
     disabled_years = []
     for y in years:
         year_courses = [c for c in COURSES if c.year == y]
@@ -252,19 +358,32 @@ def index():
     disabled_requirements = []
     for r in requirements:
         r_courses = [c for c in COURSES if c.requirement == r]
+        if not r_courses:
+            disabled_requirements.append(r)
+            continue
         if r_courses and all(not c.active for c in r_courses):
             disabled_requirements.append(r)
+    disabled_kinds = []
+    for k in kinds:
+        k_courses = [c for c in COURSES if c.kind == k]
+        if not k_courses:
+            disabled_kinds.append(k)
+            continue
+        if k_courses and all(not c.active for c in k_courses):
+            disabled_kinds.append(k)
     return render_template(
         'index.html',
         grouped=grouped,
         distinct_count=len(distinct),
         years=years,
         disabled_years=sorted(disabled_years),
+        kinds=kinds,
+        disabled_kinds=sorted(disabled_kinds),
         requirements=requirements,
+        year_counts=year_counts,
+        kind_counts=kind_counts,
+        requirement_counts=requirement_counts,
         disabled_requirements=sorted(disabled_requirements)
-    disabled_years=sorted(disabled_years),
-    requirements=requirements,
-    disabled_requirements=sorted(disabled_requirements)
     )
 
 
@@ -314,6 +433,34 @@ def enable_year(year_label: str):
     if request.accept_mimetypes.best == 'application/json' or request.headers.get('X-Requested-With') == 'fetch':
         active = active_courses()
         return jsonify({'status': 'enabled', 'year': year_label, 'distinct_remaining': len({c.title for c in active})})
+    return redirect(url_for('main.index'))
+
+
+@bp.route('/kind/disable/<path:kind_label>', methods=['POST'])
+def disable_kind(kind_label: str):
+    ensure_loaded()
+    if kind_label:
+        for c in COURSES:
+            if c.kind == kind_label:
+                c.active = False
+        _save_state()
+    if request.accept_mimetypes.best == 'application/json' or request.headers.get('X-Requested-With') == 'fetch':
+        active = active_courses()
+        return jsonify({'status': 'disabled', 'kind': kind_label, 'distinct_remaining': len({c.title for c in active})})
+    return redirect(url_for('main.index'))
+
+
+@bp.route('/kind/enable/<path:kind_label>', methods=['POST'])
+def enable_kind(kind_label: str):
+    ensure_loaded()
+    if kind_label:
+        for c in COURSES:
+            if c.kind == kind_label:
+                c.active = True
+        _save_state()
+    if request.accept_mimetypes.best == 'application/json' or request.headers.get('X-Requested-With') == 'fetch':
+        active = active_courses()
+        return jsonify({'status': 'enabled', 'kind': kind_label, 'distinct_remaining': len({c.title for c in active})})
     return redirect(url_for('main.index'))
 
 

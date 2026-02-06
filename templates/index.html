@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <script>window.__distinct_count__ = {{ distinct_count|int }};</script>
+<div class="year-filters">
+  <span class="year-filters-label">Ανενεργά:</span>
+  <button type="button" id="inactive-toggle" class="visibility-toggle" data-show-text="Απόκρυψη Ανενεργών" data-hide-text="Εμφάνιση Ανενεργών">
+    Απόκρυψη Ανενεργών
+  </button>
+</div>
 {% if years %}
 <div class="year-filters">
   <span class="year-filters-label">Έτη:</span>
@@ -9,7 +15,7 @@
     <li>
       <form method="post" action="{% if y in disabled_years %}{{ url_for('main.enable_year', year_label=y) }}{% else %}{{ url_for('main.disable_year', year_label=y) }}{% endif %}">
         <button type="submit" class="year-toggle{% if y in disabled_years %} year-disabled{% endif %}">
-          {{ y }}{% if y in disabled_years %} (Ανενεργό){% endif %}
+          {{ y }} ({{ year_counts.get(y, 0) if year_counts else 0 }}){% if y in disabled_years %} (Ανενεργό){% endif %}
         </button>
       </form>
     </li>
@@ -17,23 +23,41 @@
   </ul>
 </div>
 {% endif %}
-{% if requirements %}
+{% if kinds %}
+<div class="year-filters">
+  <span class="year-filters-label">Τύπος Μαθήματος:</span>
+  <ul class="year-filters-list">
+    {% for k in kinds %}
+    <li>
+      {% set count = kind_counts.get(k, 0) if kind_counts else 0 %}
+      <form method="post" action="{% if k in disabled_kinds %}{{ url_for('main.enable_kind', kind_label=k) }}{% else %}{{ url_for('main.disable_kind', kind_label=k) }}{% endif %}">
+        <button type="submit" class="filter-toggle kind-toggle{% if k in disabled_kinds %} year-disabled{% endif %}">
+          {{ k }} ({{ count }}){% if k in disabled_kinds %} (Ανενεργό){% endif %}
+        </button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
 <div class="year-filters">
   <span class="year-filters-label">Τύπος:</span>
   {% set req_map = {'required':'Υποχρεωτικό','elective':'Επιλογής'} %}
+  {% set req_list = requirements if requirements else ['required','elective'] %}
   <ul class="year-filters-list">
-    {% for r in requirements %}
+    {% for r in req_list %}
     <li>
+      {% set count = requirement_counts.get(r, 0) if requirement_counts else 0 %}
+      {% set has_req = count > 0 %}
       <form method="post" action="{% if r in disabled_requirements %}{{ url_for('main.enable_requirement', req_label=r) }}{% else %}{{ url_for('main.disable_requirement', req_label=r) }}{% endif %}">
-        <button type="submit" class="filter-toggle req-toggle{% if r in disabled_requirements %} year-disabled{% endif %}">
-          {{ req_map.get(r, r) }}{% if r in disabled_requirements %} (Ανενεργό){% endif %}
+        <button type="submit" class="filter-toggle req-toggle{% if r in disabled_requirements or not has_req %} year-disabled{% endif %}"{% if not has_req %} disabled{% endif %}>
+          {{ req_map.get(r, r) }} ({{ count }}){% if r in disabled_requirements and has_req %} (Ανενεργό){% endif %}
         </button>
       </form>
     </li>
     {% endfor %}
   </ul>
 </div>
-{% endif %}
 <div class="schedule-grid">
   {% set day_map = {'Monday':'Δευτέρα','Tuesday':'Τρίτη','Wednesday':'Τετάρτη','Thursday':'Πέμπτη','Friday':'Παρασκευή','Saturday':'Σάββατο','Sunday':'Κυριακή'} %}
   {% for day, courses in grouped.items() %}
