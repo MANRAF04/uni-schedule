@@ -15,6 +15,9 @@ class Course:
     instructors: List[str] = field(default_factory=list)
     original_html: Optional[str] = None
     url: Optional[str] = None
+    year: Optional[str] = None
+    active: bool = True
+    requirement: Optional[str] = None
 
     @property
     def duration_hours(self) -> float:

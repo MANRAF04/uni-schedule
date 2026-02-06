@@ -18,9 +18,6 @@
       <a href="/">Αρχική</a> |
       <a href="/api/export" target="_blank">Εξαγωγή JSON</a> |
       <a href="/export/ics?start=2025-09-22&weeks=15" title="Λήψη αρχείου iCalendar (.ics) για 15 διδακτικές εβδομάδες">Εξαγωγή ICS (15ε)</a> |
-      <form id="reset-form" action="/reset" method="post" style="display:inline;" onsubmit="return confirm('Reset schedule to original?');">
-        <button type="submit" style="background:#555;color:#fff;border:none;padding:0.25rem 0.55rem;border-radius:4px;cursor:pointer;">Επαναφορά</button>
-      </form>
     </nav>
   </header>
   <main>
@@ -45,36 +42,36 @@
         const resp = await fetch(url, {method: 'POST', headers: {'Accept':'application/json','X-Requested-With':'fetch'}});
         if (resp.ok) {
           const data = await resp.json();
-            if (Array.isArray(data.removed_ids)) {
-              data.removed_ids.forEach(id => {
-                const item = document.querySelector(`li.course-item[data-course-id="${id}"]`);
-                if (item) {
-                  item.style.opacity = '0';
-                  setTimeout(()=> item.remove(), 200);
-                }
-              });
-              if (counterEl && typeof data.distinct_remaining === 'number') setCounter(data.distinct_remaining);
-            }
+          if (Array.isArray(data.toggled_ids)) {
+            data.toggled_ids.forEach(id => {
+              const item = document.querySelector(`li.course-item[data-course-id="${id}"]`);
+              if (item) {
+                const isActive = data.active === true;
+                item.classList.toggle('inactive', !isActive);
+                const btn = item.querySelector('button.remove-btn');
+                if (btn) btn.textContent = isActive ? '✕' : '✓';
+              }
+            });
+            if (counterEl && typeof data.distinct_remaining === 'number') setCounter(data.distinct_remaining);
+          }
         }
       } catch(err) { console.error(err); }
     });
-    // Optional: AJAX reset (progressive enhancement)
-    const resetForm = document.getElementById('reset-form');
-    if (resetForm) {
-      resetForm.addEventListener('submit', async (e) => {
-        if (!window.fetch) return; // fallback to normal submit
-        e.preventDefault();
-        const ok = true; // confirmation already handled inline
-        if (!ok) return;
-        const resp = await fetch('/reset', {method: 'POST', headers: {'Accept':'application/json','X-Requested-With':'fetch'}});
+    document.body.addEventListener('click', async (e) => {
+      const btn = e.target.closest('button.year-toggle, button.filter-toggle');
+      if (!btn) return;
+      const form = btn.closest('form');
+      if (!form || !window.fetch) return;
+      e.preventDefault();
+      try {
+        const resp = await fetch(form.action, {method: 'POST', headers: {'Accept':'application/json','X-Requested-With':'fetch'}});
         if (resp.ok) {
-            const data = await resp.json();
-            if (counterEl && typeof data.distinct_remaining === 'number') setCounter(data.distinct_remaining);
-            // Full reload to rebuild DOM list
-            location.reload();
+          const data = await resp.json();
+          if (counterEl && typeof data.distinct_remaining === 'number') setCounter(data.distinct_remaining);
+          location.reload();
         }
-      });
-    }
+      } catch(err) { console.error(err); }
+    });
   });
   </script>
   {% block scripts %}{% endblock %}

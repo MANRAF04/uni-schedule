@@ -19,6 +19,26 @@ def _next_date(start: date, target_weekday: int) -> date:
     days_ahead = (target_weekday - start.weekday()) % 7
     return start + timedelta(days=days_ahead)
 
+def _default_holidays_for_start(start_date: date) -> List[Tuple[date, date]]:
+    """Return default holiday ranges based on the semester inferred from start_date."""
+    year = start_date.year
+    # Winter semester typically starts in September and includes the Christmas/New Year break
+    if start_date.month >= 9 or start_date.month == 1:
+        return [(date(year, 12, 23), date(year + 1, 1, 6))]
+
+    # Spring (Easter) semester defaults for 2026 (from academic calendar)
+    if year == 2026 and 2 <= start_date.month <= 6:
+        return [
+            (date(2026, 2, 23), date(2026, 2, 23)),  # Clean Monday
+            (date(2026, 3, 25), date(2026, 3, 25)),  # National holiday
+            (date(2026, 4, 6), date(2026, 4, 17)),   # Easter break
+            (date(2026, 5, 1), date(2026, 5, 1)),    # May Day
+            (date(2026, 6, 1), date(2026, 6, 1)),    # Holy Spirit Day
+        ]
+
+    return []
+
+
 def generate_ics(courses: Iterable[Course], start_date: date, weeks: int = 12, tz: str = 'Europe/Athens',
                  holidays: List[Tuple[date, date]] | None = None) -> str:
     """Generate an .ics calendar string for the given courses.
@@ -33,10 +53,9 @@ def generate_ics(courses: Iterable[Course], start_date: date, weeks: int = 12, t
     base_monday = start_date - timedelta(days=start_date.weekday())
     now_stamp = datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')
 
-    # Holiday ranges (inclusive) default: Christmas/New Year break specified by user
-    # Provided: from Tuesday 23/12/2025 till Tuesday 06/01/2026 (inclusive)
+    # Holiday ranges (inclusive). If not provided, infer from the semester.
     if holidays is None:
-        holidays = [ (date(2025,12,23), date(2026,1,6)) ]
+        holidays = _default_holidays_for_start(start_date)
 
     def is_holiday(d: date) -> bool:
         for start, end in holidays:
